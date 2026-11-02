@@ -1165,15 +1165,11 @@ verticalNav .mainNavLi [data-position="downWard"]{position: relative;display: no
       var as=document.querySelectorAll('a[href]');
       for(var i=0;i<as.length;i++){
         var a=as[i], h=a.getAttribute('href');
-        if(!h||h.charAt(0)==='#'||/^(https?:|mailto:|tel:|javascript:|data:)/i.test(h)){ continue; }
-        try{
-          var u=new URL(h,location.href);
-          if(u.origin!==location.origin){ continue; }
-          if(!u.searchParams.get('sharecode')){
-            u.searchParams.set('sharecode',sc);
-            a.setAttribute('href',u.pathname+u.search+u.hash);
-          }
-        }catch(e){}
+        if(!h||h.charAt(0)==='#'||/^(https?:|mailto:|tel:|javascript:|data:|\/)/i.test(h)){ continue; }
+        if(/[?&]sharecode=/.test(h)){ continue; }
+        var hash='', hi=h.indexOf('#');
+        if(hi>-1){ hash=h.slice(hi); h=h.slice(0,hi); }
+        a.setAttribute('href', h + (h.indexOf('?')>-1?'&':'?') + 'sharecode=' + sc + hash);
       }
     }
     if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',fix); } else { fix(); }
