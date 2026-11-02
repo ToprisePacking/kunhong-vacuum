@@ -1,0 +1,30 @@
+.relativeMapBox{position: relative;width: 100%;height: 400px;}
+						.mapMack{position: absolute;top: 0;  bottom: 0;	    right: 0; left: 0;    display: flex;
+			    align-items: center;    pointer-events: none;}
+						.mapMackBox{max-width: 35%;min-width: 24%; padding:20px;max-height: 24rem;    background-color: rgb(255 255 255 / 85%);border-top:4px solid #ccc;border-radius: 4px;color: #121212;left: 14%;position:relative; box-sizing: border-box;}
+						.rtlAr .mapMackBox{right:14%;left:auto;}
+						.mapTextIcon{margin-right: 6px;}
+						.rtlAr .mapTextIcon{margin-left: 6px;margin-right: initial;}
+						.relativeMapBox .mapText{
+							display: flex;
+							font-size: 14px;
+							line-height: 26px;
+						}
+						.relativeMapBox .mapName{
+							    font-size: 16px;
+								margin-bottom: 10px;
+							    font-weight: 600;
+						}
+						@media (max-width: 980px) {
+						  /* 当视口宽度 ≤ 980px 时应用的样式 */
+						  .mapMackBox {
+							  left: 1%;
+							  padding:12px;
+							  max-width: 80%;min-width: 40%;
+							  bottom:1%
+						  }
+						  .rtlAr .mapMackBox{right:1%;left:auto;}
+						  .mapMack{
+							  align-items:end;
+						  }
+						}

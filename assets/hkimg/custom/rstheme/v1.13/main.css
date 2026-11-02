@@ -1,0 +1,147 @@
+.rstheme_8dK3a {
+    width: 100%;
+    
+    margin: var(--margin-tb) auto;
+    
+}
+
+.rstheme_8dK3a-wrapper {
+    display: grid;
+    grid-template-columns: repeat(var(--columns, 4), 1fr);
+    gap: 3rem;
+    max-width: 100%;
+}
+
+.rstheme_8dK3a-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.rstheme_8dK3a-number-container {
+    display: flex;
+    align-items: baseline;
+    gap: 0.3rem;
+    
+    overflow: hidden;
+    position: relative;
+}
+
+.rstheme_8dK3a-number-scroll {
+    display: inline-block;
+    font-size: var(--number-size);
+    font-weight: 300;
+    line-height: 1;
+    position: relative;
+    overflow: hidden;
+}
+
+.rstheme-style-stroke .rstheme_8dK3a-number-scroll {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--number-color);
+    text-stroke: 2px var(--number-color);
+}
+
+.rstheme-style-solid .rstheme_8dK3a-number-scroll {
+    color: var(--number-color);
+    -webkit-text-stroke: 0;
+    text-stroke: 0;
+}
+
+.rstheme_8dK3a-number-display {
+    display: inline-block;
+    transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.rstheme_8dK3a-unit {
+    font-size: var(--unit-size);
+    font-weight: 300;
+    line-height: 1;
+}
+
+.rstheme-style-stroke .rstheme_8dK3a-unit {
+    color: transparent;
+    -webkit-text-stroke: 2px var(--number-color);
+    text-stroke: 2px var(--number-color);
+}
+
+.rstheme-style-solid .rstheme_8dK3a-unit {
+    color: var(--number-color);
+    -webkit-text-stroke: 0;
+    text-stroke: 0;
+}
+
+.rstheme_8dK3a-underline {
+    width: 100%;
+    height: 1px;
+    background-color: var(--underline-color);
+    margin: 0.5rem 0;
+}
+
+.rstheme_8dK3a-title {
+    font-size: var(--item-title-size);
+    color: var(--item-title-color);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: capitalize;
+}
+
+/* 平板（Pad）样式 */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .rstheme_8dK3a-wrapper {
+        grid-template-columns: repeat(min(var(--columns, 4), 2), 1fr);
+        gap: 2.5rem;
+    }
+    
+    .rstheme_8dK3a-number-container {
+        height: calc(var(--number-size) * 0.95);
+    }
+    
+    .rstheme_8dK3a-number-scroll {
+        font-size: calc(var(--number-size) * 0.95);
+    }
+    
+    .rstheme_8dK3a-unit {
+        font-size: calc(var(--unit-size) * 0.95);
+    }
+    
+    .rstheme_8dK3a-title {
+        font-size: calc(var(--item-title-size) * 0.95);
+    }
+}
+
+/* 手机端样式 */
+@media (max-width: 767px) {
+    .rstheme_8dK3a {
+        padding: 0 1.5rem;
+    }
+
+    .rstheme_8dK3a-wrapper {
+        grid-template-columns: repeat(min(var(--columns, 4), 2), 1fr);
+        gap: 2rem;
+    }
+    
+    .rstheme_8dK3a-number-container {
+        height: calc(var(--number-size) * 0.9);
+    }
+    
+    .rstheme_8dK3a-number-scroll {
+        font-size: calc(var(--number-size) * 0.9);
+    }
+    
+    .rstheme_8dK3a-unit {
+        font-size: calc(var(--unit-size) * 0.9);
+    }
+    
+    .rstheme_8dK3a-title {
+        font-size: calc(var(--item-title-size) * 0.9);
+    }
+}
+
+@media (max-width: 480px) {
+    .rstheme_8dK3a-wrapper {
+        grid-template-columns: repeat(min(var(--columns, 4), 1), 1fr);
+        gap: 1.5rem;
+    }
+}
